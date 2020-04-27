@@ -8,8 +8,8 @@ Intel Core i7-8750H CPU 2.20GHz (Coffee Lake), 1 CPU, 12 logical and 6 physical 
 
 
 ```
-|                                           Method |     Mean |     Error |    StdDev |
-|------------------------------------------------- |---------:|----------:|----------:|
-|                               WithTypeDescriptor | 3.789 μs | 0.0719 μs | 0.0706 μs |
-|                            WithoutTypeDescriptor | 2.014 μs | 0.0231 μs | 0.0216 μs |
-| WithoutTypeDescriptorAndNewAccessPerPropertyName | 2.183 μs | 0.0430 μs | 0.0512 μs |
+|                        Method |     Mean |     Error |    StdDev |   Median |
+|------------------------------ |---------:|----------:|----------:|---------:|
+|      AccessWithTypeDescriptor | 3.467 μs | 0.0292 μs | 0.0244 μs | 3.459 μs |
+| SingleAccessWithGetProperties | 1.526 μs | 0.0125 μs | 0.0104 μs | 1.523 μs |
+|      NewAccessPerPropertyName | 1.839 μs | 0.0367 μs | 0.1012 μs | 1.806 μs |

@@ -18,45 +18,45 @@ namespace TypeDescriptorBenchmark
         };
 
         [Benchmark]
-        public IDictionary<string, object> WithTypeDescriptor()
+        public void AccessWithTypeDescriptor()
         {
             var message = Message;
-            var dict = new Dictionary<string, object>(StringComparer.OrdinalIgnoreCase);
+            // var dict = new Dictionary<string, object>(StringComparer.OrdinalIgnoreCase);
 
             foreach (PropertyDescriptor propertyDescriptor in TypeDescriptor.GetProperties(message))
             {
                 var obj = propertyDescriptor.GetValue(message);
 
-                dict.Add(propertyDescriptor.Name, obj);
+                // dict.Add(propertyDescriptor.Name, obj);
             }
 
-            return dict;
+            // return dict;
         }
 
         [Benchmark]
-        public IDictionary<string, object> WithoutTypeDescriptor()
+        public void SingleAccessWithGetProperties()
         {
             var message = Message;
             var messageType = message.GetType();
             var properties = messageType.GetProperties(BindingFlags.Public | BindingFlags.Instance);
-            var dict = new Dictionary<string, object>(StringComparer.OrdinalIgnoreCase);
+            // var dict = new Dictionary<string, object>(StringComparer.OrdinalIgnoreCase);
 
             foreach (PropertyInfo propertyInfo in properties)
             {
                 var obj = propertyInfo.GetValue(message);
 
-                dict.Add(propertyInfo.Name, obj);
+                // dict.Add(propertyInfo.Name, obj);
             }
 
-            return dict;
+            // return dict;
         }
 
         [Benchmark]
-        public IDictionary<string, object> WithoutTypeDescriptorAndNewAccessPerPropertyName()
+        public void NewAccessPerPropertyName()
         {
             var message = Message;
             var messageType = message.GetType();
-            var dict = new Dictionary<string, object>(StringComparer.OrdinalIgnoreCase);
+            // var dict = new Dictionary<string, object>(StringComparer.OrdinalIgnoreCase);
 
             foreach (var propertyName in new[] {"a", "b", "c", "d", "e"}
             )
@@ -65,10 +65,10 @@ namespace TypeDescriptorBenchmark
                     messageType.GetProperty(propertyName, BindingFlags.Public | BindingFlags.Instance)!
                         .GetValue(message);
 
-                dict.Add(propertyName, obj);
+                // dict.Add(propertyName, obj);
             }
 
-            return dict;
+            // return dict;
         }
 
         class Extra

@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8' />
-<title>TypeDescriptorBenchmark.Test-20200427-131655</title>
+<title>TypeDescriptorBenchmark.Test-20200427-162824</title>
 
 <style type="text/css">
 	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
@@ -22,11 +22,11 @@ Intel Core i7-8750H CPU 2.20GHz (Coffee Lake), 1 CPU, 12 logical and 6 physical 
 <pre><code></code></pre>
 
 <table>
-<thead><tr><th>                                    Method</th><th>Mean</th><th>Error</th><th>StdDev</th>
+<thead><tr><th>                 Method</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Median</th>
 </tr>
-</thead><tbody><tr><td>WithTypeDescriptor</td><td>3.789 &mu;s</td><td>0.0719 &mu;s</td><td>0.0706 &mu;s</td>
-</tr><tr><td>WithoutTypeDescriptor</td><td>2.014 &mu;s</td><td>0.0231 &mu;s</td><td>0.0216 &mu;s</td>
-</tr><tr><td>WithoutTypeDescriptorAndNewAccessPerPropertyName</td><td>2.183 &mu;s</td><td>0.0430 &mu;s</td><td>0.0512 &mu;s</td>
+</thead><tbody><tr><td>AccessWithTypeDescriptor</td><td>3.467 &mu;s</td><td>0.0292 &mu;s</td><td>0.0244 &mu;s</td><td>3.459 &mu;s</td>
+</tr><tr><td>SingleAccessWithGetProperties</td><td>1.526 &mu;s</td><td>0.0125 &mu;s</td><td>0.0104 &mu;s</td><td>1.523 &mu;s</td>
+</tr><tr><td>NewAccessPerPropertyName</td><td>1.839 &mu;s</td><td>0.0367 &mu;s</td><td>0.1012 &mu;s</td><td>1.806 &mu;s</td>
 </tr></tbody></table>
 </body>
 </html>
